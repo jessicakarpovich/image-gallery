@@ -1,0 +1,29 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $font-size-default;
+}
+
+h1 {
+    font-size: $font-size-header;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .logo {
+        width: 5%;
+        height: 5%;
+    }
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}

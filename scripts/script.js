@@ -11,7 +11,7 @@ const url = api_endpoint + "client_id=" + appID + "&query=" + query;
 
 
 /***** Load images by using fetch *****/
-function loadImages() {
+function loadImages(e) {
     fetch(url) 
     .then(response => response.json())
     .then(results => {
@@ -26,16 +26,26 @@ function loadImages() {
 window.addEventListener('load', loadImages, false);
 
 
-/* display the loaded images,
-    only load 12 for now */
+/* display the loaded images, */
 function showContent(data) {
-    
+    console.log(data);
     let content = "";
     const imageSection = document.querySelector(".image-gallery");
     
-    for (let i=0; i < 12; i++) {
+    /* make sure that i does not exceed the number of results per page
+        check the per_page value in the url before adjusting for loop */
+    for (let i=0; i < 10; i++) {
         content += "<article>";
-        content += "<img src='" + data.results[i].urls.full + "' alt='" + query + " photo by " + data.results[i].user.name + "'>";
+        
+        content += "<img src='" + data.results[i].urls.small + "'";
+        content += "srcset='" + data.results[i].urls.small + " 400w, ";
+        content += data.results[i].urls.regular + " 1080w, ";
+        content += data.results[i].urls.full + " 3504w'";
+        content += "sizes='(max-width: 600px) 100vw, ";
+        content += "(max-width: 800px) 50vw, ";
+        content += "33vw'";
+        content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
+        
         content += "<p>" + data.results[i].user.name + "</p>";
         content += "<p>" + data.results[i].likes + "</p>";
         content += "</article>";
