@@ -45,8 +45,9 @@ function showContent(data) {
         content += "(max-width: 800px) 50vw, ";
         content += "33vw'";
         content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
-        
-        content += "<p>" + data.results[i].user.name + "</p>";
+        // include link back to photographer, follow attribution guideline
+        content += "<p><a href='" + data.results[i].user.links.html + 
+            "?utm_source=image_gallery&utm_medium=referral'>" + data.results[i].user.name + "</a></p>";
         content += "<p>" + data.results[i].likes + "</p>";
         content += "</article>";
     }
