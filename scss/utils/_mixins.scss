@@ -11,3 +11,8 @@
         @media (min-width: 801px) { @content; }
     }
 }
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}

@@ -1,0 +1,15 @@
+%font-default {
+    font-size: $font-size-default;
+    font-family: $font-family-default;
+}
+
+%font-main-header {
+    font-size: $font-size-header;
+    font-weight: 900;
+    margin: 1rem 0;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}

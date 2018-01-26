@@ -1,3 +1,6 @@
+// first include reset 
+@import 'base/reset';
+
 // Utilites
 // Variables need to be declared before being used
 @import 'utils/variables';
@@ -5,5 +8,4 @@
 @import 'utils/placeholders';
 
 // Base Styles
-@import 'base/reset';
 @import 'base/base';
