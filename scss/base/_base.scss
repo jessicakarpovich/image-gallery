@@ -1,3 +1,4 @@
+/***** General *****/
 html {
     font-size: 62.5%;
 }
@@ -21,7 +22,7 @@ q {
     font-family: $font-family-alt;
 }
 
-
+/** Wrapper for larger screens, on mobile ignore **/
 .wrapper {
     @include mq(med) {
         margin-left: 1rem;
@@ -34,15 +35,17 @@ q {
     }
 }
 
-
+/* light text color */
 p, a {
     color: #bbb;
 }
 
+/* regular text color */
 footer p, header p {
     color: $text-color;
 }
 
+/***** Header *****/
 header {
     display: flex;
     flex-direction: column;
@@ -50,29 +53,26 @@ header {
     margin: 0 1rem 4rem;
     
     .cloud-logo {
-        width: 3%;
-        height: 3%;
+        width: 5rem;
+        height: 5rem;
         margin-top: 2rem;
-        
-        @include mq(small) {
-            width: 5rem;
-            height: 5rem;
-        }
     }
 }
 
+/***** Main Section *****/
 section {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     
+    /* on mobile use 1 column layout */
     @include mq(small) {
         flex-direction: column;
     }
     
     article {
         margin: 1rem;
-        
+        /* make images as wide as article */
         img {
             width: 100%;
             height: auto;
@@ -81,7 +81,6 @@ section {
         @include mq(small) {
             margin: 2rem 0 0 0;
             max-width: 60rem;
-            align-items: flex-start;
         }
         
         @include mq(med) {
@@ -94,27 +93,7 @@ section {
     }
 }
 
-.photo-info {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    opacity: .8;
-    padding: 1rem 0 2rem 2rem;
-    margin: -8rem auto 0;
-    
-    @include mq(small) {
-        display: flex;
-        flex-direction: column;
-        background-color: #000;
-        opacity: .8;
-        position: relative;
-        //width: 30rem;
-        padding: 1rem 0 2rem 2rem;
-        margin: -8rem auto 0;
-        
-    }
-}
-
+/*** Insert author and heart icon ***/
 .author {
     background: url(../images/user-icon.svg) no-repeat top left;
     padding-left: 3rem;
@@ -126,12 +105,31 @@ section {
     padding-left: 3rem;
 }
 
-article img:hover div {
-    opacity: .5;
+/**** Adjust author and like count layout, 
+        only immediately visible on small screens ****/
+.photo-info {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    opacity: .8;
+    padding: 1rem 0 1rem 2rem;
+    margin: -6.3rem auto 0;
+    
+    @include mq(small) {
+        display: flex;
+        position: relative;
+        padding: 1rem 0 2rem 2rem;
+        margin: -8.2rem auto 0; 
+    }
+}
+
+/*** On hover, make photo info visible ***/
+article:hover .photo-info {
     display: flex;
     position: relative;
 }
 
+/***** Footer *****/
 footer {
     display: flex;
     justify-content: center;
