@@ -105,41 +105,61 @@ section {
     padding-left: 3rem;
 }
 
-/**** Adjust author and like count layout, 
-        only immediately visible on small screens ****/
-//fix
+/**** Adjust author and like count layout, only immediately visible on small screens ****/
+/* set general styling */
 .photo-info {
-    //display: none;
     display: flex;
     flex-direction: column;
+    /* needed to have background color appear over image */
     position: relative;
     background-color: #000;
     opacity: .8;
-    padding: 1rem 0 1rem 2rem;
-    margin: 0;
-    //margin: -6.3rem auto 0;
+    padding: 0 0 0 2rem;
+    margin-top: 0;
     
     @include mq(small) {
         display: flex;
         padding: 1rem 0 2rem 2rem;
-        margin: -8.7rem auto 0; 
+        margin-top: -8.7rem; 
     }
 }
 
+/***** Hover Transition *****/
+/* add med and large screen specific styles */
 article .photo-info {
-    transition: all .5s ease-in;
+    @include mq(med) {
+        transition: all .3s ease-in;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    @include mq(large) {
+        transition: all .3s ease-in;
+        height: 0;
+        overflow: hidden;
+    }
 }
 
 /*** On hover, make photo info visible ***/
-article:hover .photo-info {
-    //display: flex;
-    margin: -6.3rem auto 0;
+article:hover > .photo-info {
+    opacity: .8;
+    height: 4rem;
+    padding: 1rem 0 1rem 2rem;
+    margin-top: -6.3rem;
+    
+    /* make sure there is no change on small screens */
+    @include mq(small) {
+        height: auto;
+        padding: 1rem 0 2rem 2rem;
+        margin-top: -8.7rem; 
+    }
 }
+
 
 /**** Animations ****/
 /* change text color */
 .changeCol {
-    animation: changeCol 4s ease-out forwards;
+    animation: changeCol 2s ease-out forwards;
 }
 
 @keyframes changeCol {

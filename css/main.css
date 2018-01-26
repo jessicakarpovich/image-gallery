@@ -116,8 +116,8 @@ section {
   background: url(../images/heart.svg) no-repeat top left;
   padding-left: 3rem; }
 
-/**** Adjust author and like count layout, 
-        only immediately visible on small screens ****/
+/**** Adjust author and like count layout, only immediately visible on small screens ****/
+/* set general styling */
 .photo-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,32 +126,54 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  /* needed to have background color appear over image */
   position: relative;
   background-color: #000;
   opacity: .8;
-  padding: 1rem 0 1rem 2rem;
-  margin: 0; }
+  padding: 0 0 0 2rem;
+  margin-top: 0; }
   @media (min-width: 320px) and (max-width: 600px) {
     .photo-info {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       padding: 1rem 0 2rem 2rem;
-      margin: -8.7rem auto 0; } }
+      margin-top: -8.7rem; } }
 
-article .photo-info {
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in; }
+/***** Hover Transition *****/
+/* add med and large screen specific styles */
+@media (min-width: 601px) and (max-width: 800px) {
+  article .photo-info {
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    height: 0;
+    overflow: hidden; } }
+
+@media (min-width: 801px) {
+  article .photo-info {
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    height: 0;
+    overflow: hidden; } }
 
 /*** On hover, make photo info visible ***/
-article:hover .photo-info {
-  margin: -6.3rem auto 0; }
+article:hover > .photo-info {
+  opacity: .8;
+  height: 4rem;
+  padding: 1rem 0 1rem 2rem;
+  margin-top: -6.3rem;
+  /* make sure there is no change on small screens */ }
+  @media (min-width: 320px) and (max-width: 600px) {
+    article:hover > .photo-info {
+      height: auto;
+      padding: 1rem 0 2rem 2rem;
+      margin-top: -8.7rem; } }
 
 /**** Animations ****/
 /* change text color */
 .changeCol {
-  -webkit-animation: changeCol 4s ease-out forwards;
-          animation: changeCol 4s ease-out forwards; }
+  -webkit-animation: changeCol 2s ease-out forwards;
+          animation: changeCol 2s ease-out forwards; }
 
 @-webkit-keyframes changeCol {
   100% {
