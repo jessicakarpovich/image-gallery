@@ -28,7 +28,6 @@ window.addEventListener('load', loadImages, false);
 
 /* display the loaded images, */
 function showContent(data) {
-    console.log(data);
     let content = "";
     const imageSection = document.querySelector(".image-gallery");
     
@@ -41,9 +40,11 @@ function showContent(data) {
         content += "srcset='" + data.results[i].urls.small + " 400w, ";
         content += data.results[i].urls.regular + " 1080w, ";
         content += data.results[i].urls.full + " 3504w'";
+        /*
         content += "sizes='(max-width: 600px) 100vw, ";
         content += "(max-width: 800px) 46vw, ";
         content += "25vw'";
+        */
         content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
         // include link back to photographer, follow attribution guideline
         content += "<div class=photo-info>";

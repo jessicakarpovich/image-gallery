@@ -29,8 +29,8 @@ q {
     }
     
     @include mq(large) {
-        margin-left: 4rem;
-        margin-right: 4rem;
+        margin-left: 8rem;
+        margin-right: 8rem;
     }
 }
 
@@ -73,6 +73,11 @@ section {
     article {
         margin: 1rem;
         
+        img {
+            width: 100%;
+            height: auto;
+        }
+        
         @include mq(small) {
             margin: 2rem 0 0 0;
             max-width: 60rem;
@@ -91,6 +96,12 @@ section {
 
 .photo-info {
     display: none;
+    flex-direction: column;
+    background-color: #000;
+    opacity: .8;
+    padding: 1rem 0 2rem 2rem;
+    margin: -8rem auto 0;
+    
     @include mq(small) {
         display: flex;
         flex-direction: column;
@@ -115,18 +126,10 @@ section {
     padding-left: 3rem;
 }
 
-article img:hover {
+article img:hover div {
     opacity: .5;
-    div.photo-info {
-        display: flex;
-        flex-direction: column;
-        background-color: #000;
-        opacity: .8;
-        position: relative;
-        //width: 30rem;
-        padding: 1rem 0 2rem 2rem;
-        margin: -8rem auto 0;
-    }
+    display: flex;
+    position: relative;
 }
 
 footer {

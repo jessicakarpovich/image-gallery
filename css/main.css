@@ -41,8 +41,8 @@ q {
 
 @media (min-width: 801px) {
   .wrapper {
-    margin-left: 4rem;
-    margin-right: 4rem; } }
+    margin-left: 8rem;
+    margin-right: 8rem; } }
 
 p, a {
   color: #bbb; }
@@ -88,6 +88,9 @@ section {
               flex-direction: column; } }
   section article {
     margin: 1rem; }
+    section article img {
+      width: 100%;
+      height: auto; }
     @media (min-width: 320px) and (max-width: 600px) {
       section article {
         margin: 2rem 0 0 0;
@@ -103,7 +106,15 @@ section {
         width: calc((100% - 6rem) / 3); } }
 
 .photo-info {
-  display: none; }
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #000;
+  opacity: .8;
+  padding: 1rem 0 2rem 2rem;
+  margin: -8rem auto 0; }
   @media (min-width: 320px) and (max-width: 600px) {
     .photo-info {
       display: -webkit-box;
@@ -128,21 +139,12 @@ section {
   background: url(../images/heart.svg) no-repeat top left;
   padding-left: 3rem; }
 
-article img:hover {
-  opacity: .5; }
-  article img:hover div.photo-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background-color: #000;
-    opacity: .8;
-    position: relative;
-    padding: 1rem 0 2rem 2rem;
-    margin: -8rem auto 0; }
+article img:hover div {
+  opacity: .5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative; }
 
 footer {
   display: -webkit-box;
