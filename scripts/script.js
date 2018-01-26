@@ -34,7 +34,7 @@ function showContent(data) {
     
     /* make sure that i does not exceed the number of results per page
         check the per_page value in the url before adjusting for loop */
-    for (let i=0; i < 10; i++) {
+    for (let i=0; i < 9; i++) {
         content += "<article>";
         
         content += "<img src='" + data.results[i].urls.small + "'";
@@ -42,13 +42,14 @@ function showContent(data) {
         content += data.results[i].urls.regular + " 1080w, ";
         content += data.results[i].urls.full + " 3504w'";
         content += "sizes='(max-width: 600px) 100vw, ";
-        content += "(max-width: 800px) 50vw, ";
-        content += "33vw'";
+        content += "(max-width: 800px) 46vw, ";
+        content += "25vw'";
         content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
         // include link back to photographer, follow attribution guideline
-        content += "<p><a href='" + data.results[i].user.links.html + 
+        content += "<div class=photo-info>";
+        content += "<p class='author'><a href='" + data.results[i].user.links.html + 
             "?utm_source=image_gallery&utm_medium=referral'>" + data.results[i].user.name + "</a></p>";
-        content += "<p>" + data.results[i].likes + "</p>";
+        content += "<p class='likes'>" + data.results[i].likes + "</p></div>";
         content += "</article>";
     }
     
