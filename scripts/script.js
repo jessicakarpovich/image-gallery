@@ -53,3 +53,10 @@ function showContent(data) {
     
     imageSection.innerHTML = content;
 }
+
+
+/***** Animation Events *****/
+const logo = document.querySelector('.logo');
+const text = document.querySelector('q');
+
+logo.addEventListener('click', () => { text.classList.add('changeCol'); }, false);

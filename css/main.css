@@ -119,30 +119,47 @@ section {
 /**** Adjust author and like count layout, 
         only immediately visible on small screens ****/
 .photo-info {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
   background-color: #000;
   opacity: .8;
   padding: 1rem 0 1rem 2rem;
-  margin: -6.3rem auto 0; }
+  margin: 0; }
   @media (min-width: 320px) and (max-width: 600px) {
     .photo-info {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      position: relative;
       padding: 1rem 0 2rem 2rem;
-      margin: -8.2rem auto 0; } }
+      margin: -8.7rem auto 0; } }
+
+article .photo-info {
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in; }
 
 /*** On hover, make photo info visible ***/
 article:hover .photo-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative; }
+  margin: -6.3rem auto 0; }
+
+/**** Animations ****/
+/* change text color */
+.changeCol {
+  -webkit-animation: changeCol 4s ease-out forwards;
+          animation: changeCol 4s ease-out forwards; }
+
+@-webkit-keyframes changeCol {
+  100% {
+    color: #66A8CC; } }
+
+@keyframes changeCol {
+  100% {
+    color: #66A8CC; } }
 
 /***** Footer *****/
 footer {
