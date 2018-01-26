@@ -177,11 +177,11 @@ article:hover > .photo-info {
 
 @-webkit-keyframes changeCol {
   100% {
-    color: #66A8CC; } }
+    color: #0080AA; } }
 
 @keyframes changeCol {
   100% {
-    color: #66A8CC; } }
+    color: #0080AA; } }
 
 /***** Footer *****/
 footer {

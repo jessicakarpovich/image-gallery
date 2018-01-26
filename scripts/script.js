@@ -36,9 +36,12 @@ function showContent(data) {
         content += "<article>";
         
         content += "<img src='" + data.results[i].urls.small + "'";
-        content += "srcset='" + data.results[i].urls.small + " 400w, ";
+        content += "srcset='" + data.results[i].urls.full + " 3504w, ";
         content += data.results[i].urls.regular + " 1080w, ";
-        content += data.results[i].urls.full + " 3504w'";
+        content += data.results[i].urls.small + " 400w'";
+        content += "sizes='(min-width: 32em) 100vw, ";
+        content += "(min-width: 60.1em) calc((100vw - 4rem )/ 2), ";
+        content += "calc((100vw - 6rem) / 3)";
         
         content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
         
@@ -56,7 +59,11 @@ function showContent(data) {
 
 
 /***** Animation Events *****/
+/* On click, change color of quote and logo text by adding class nane */
 const logo = document.querySelector('.logo');
 const text = document.querySelector('q');
 
-logo.addEventListener('click', () => { text.classList.add('changeCol'); }, false);
+logo.addEventListener('click', 
+                      () => { text.classList.add('changeCol');
+                              logo.classList.add('changeCol'); }, 
+                      false);
