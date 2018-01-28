@@ -41,7 +41,7 @@ function showContent(data) {
         content += data.results[i].urls.small + " 400w'";
         content += "sizes='(min-width: 32em) 100vw, ";
         content += "(min-width: 60.1em) calc((100vw - 4rem )/ 2), ";
-        content += "calc((100vw - 6rem) / 3)";
+        content += "calc((100vw - 6rem) / 3)'";
         
         content += " alt='" + query + " photo by " + data.results[i].user.name + "'>";
         
